@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ControlClienteAapp
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         MiSerializador controller;
            
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
             this.TopLevel = true;
