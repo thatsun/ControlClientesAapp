@@ -15,7 +15,7 @@ namespace ControlClienteAapp
     public partial class ClientesBajas : Form
     {
         DataTable tabla;
-        int idseleccionado = 0;
+        string idseleccionado = "";
 
         public ClientesBajas()
         {
@@ -35,13 +35,32 @@ namespace ControlClienteAapp
         }
         private void ConsultarClientes()
         {
-            foreach (KeyValuePair<int, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
+            foreach (KeyValuePair<string, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
             {
-                if (BC_id_inputfield.Text != "")
+                if (Entry.Value.ClienteID.Contains(BC_id_inputfield.Text) & BC_id_inputfield.Text != "")
                 {
-                    if (Int32.TryParse(BC_id_inputfield.Text, out int numValue))
+                    DataRow fila = tabla.NewRow();
+                    fila["Seleccionar"] = false;
+                    fila["ClientId"] = Entry.Value.ClienteID;
+                    fila["Nombre"] = Entry.Value.Nombre;
+                    fila["Apellido"] = Entry.Value.Apellido;
+                    tabla.Rows.Add(fila);
+
+                }
+                else
+                {
+                    if (MiSerializador.control.catalogo_clientes[Entry.Value.ClienteID].Nombre.ToLower().Contains(BC_name_inputfield.Text.ToLower()) & BC_name_inputfield.Text != "")
                     {
-                        if (numValue == Entry.Value.ClienteID)
+                        DataRow fila = tabla.NewRow();
+                        fila["Seleccionar"] = false;
+                        fila["ClientId"] = Entry.Value.ClienteID;
+                        fila["Nombre"] = Entry.Value.Nombre;
+                        fila["Apellido"] = Entry.Value.Apellido;
+                        tabla.Rows.Add(fila);
+                    }
+                    else
+                    {
+                        if (MiSerializador.control.catalogo_clientes[Entry.Value.ClienteID].Apellido.ToLower().Contains(BC_apellido_inputfield.Text.ToLower()) & BC_apellido_inputfield.Text != "")
                         {
                             DataRow fila = tabla.NewRow();
                             fila["Seleccionar"] = false;
@@ -49,58 +68,13 @@ namespace ControlClienteAapp
                             fila["Nombre"] = Entry.Value.Nombre;
                             fila["Apellido"] = Entry.Value.Apellido;
                             tabla.Rows.Add(fila);
-                            
                         }
+
                     }
-                    
-                }
-                else
-                {
-                    if (BC_name_inputfield.Text != "")
-                    {
-                        if (BC_apellido_inputfield.Text != "")
-                        {
-                            if (BC_apellido_inputfield.Text == Entry.Value.Apellido & BC_name_inputfield.Text == Entry.Value.Nombre)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                fila["Seleccionar"] = false;
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
-                        }
-                        else
-                        {
-                            if (BC_name_inputfield.Text == Entry.Value.Nombre)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                fila["Seleccionar"] =false;
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
-                        }
-                        
-                    }
-                    else
-                    {
-                        if (BC_apellido_inputfield.Text!="")
-                        {
-                            if (BC_apellido_inputfield.Text == Entry.Value.Apellido)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                fila["Seleccionar"] = false;
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
-                        }
-                    }
+
                 }
             }
+            
         }
         private void Limpiar()
         {
@@ -122,20 +96,40 @@ namespace ControlClienteAapp
 
         private void BC_borrar_button_Click(object sender, EventArgs e)
         {
+            
             BC_borrar_button.Enabled = false;
             ///borra algo
             ///
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
+                
                 if (Convert.ToBoolean(tabla.Rows[i]["Seleccionar"]) == true)
                 {
-                    idseleccionado = Convert.ToInt32(tabla.Rows[i]["ClientId"]);
-                    MiSerializador.control.catalogo_clientes.Remove(idseleccionado);
+                    bool borrado = true;
+                    idseleccionado = Convert.ToString(tabla.Rows[i]["ClientId"]);
+                    foreach (KeyValuePair<string, PedidoData> _Entry in MiSerializador.control.catalogo_pedido)
+                    {
+                        if (_Entry.Value.ClienteID == idseleccionado)
+                        {
+
+                            borrado = false;
+                        }                      
+
+                    }
+                    if (borrado) {
+                        
+                        MiSerializador.control.catalogo_clientes.Remove(idseleccionado);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El regsitro no se pued eliminar por que tiene pedidos asociados");
+                    }
+                    
                 }
             }
             
             MiSerializador.control.SaveAppdata();
-            idseleccionado = 0;
+            idseleccionado = "";
             Limpiar();
             Iniciar();
         }

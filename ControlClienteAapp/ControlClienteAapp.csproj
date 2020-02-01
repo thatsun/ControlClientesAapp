@@ -46,6 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes_Cambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Cambios.Designer.cs">
+      <DependentUpon>Clientes_Cambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetallesPedido.Designer.cs">
+      <DependentUpon>DetallesPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editarcliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editarcliente.Designer.cs">
+      <DependentUpon>editarcliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Captura_Nuevo_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Captura_Nuevo_Pedido.Designer.cs">
+      <DependentUpon>Captura_Nuevo_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo_Productos.Designer.cs">
+      <DependentUpon>Catalogo_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarPedidos.Designer.cs">
+      <DependentUpon>ConsultarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleProducto.Designer.cs">
+      <DependentUpon>DetalleProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos_nuevo.Designer.cs">
+      <DependentUpon>Pedidos_nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +133,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Captura_Nuevo_Pedido.resx">
+      <DependentUpon>Captura_Nuevo_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Cambios.resx">
+      <DependentUpon>Clientes_Cambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarPedidos.resx">
+      <DependentUpon>ConsultarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleProducto.resx">
+      <DependentUpon>DetalleProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallesPedido.resx">
+      <DependentUpon>DetallesPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editarcliente.resx">
+      <DependentUpon>editarcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo_Productos.resx">
+      <DependentUpon>Catalogo_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos_nuevo.resx">
+      <DependentUpon>Pedidos_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,71 +30,45 @@ namespace ControlClienteAapp
         }
         private void ConsultarClientes()
         {
-            foreach (KeyValuePair<int, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
+            foreach (KeyValuePair<string, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
             {
-                if (CC_id_inputfield.Text != "")
+                if (Entry.Value.ClienteID.Contains(CC_id_inputfield.Text)& CC_id_inputfield.Text!="")
                 {
-                    if (Int32.TryParse(CC_id_inputfield.Text, out int numValue))
-                    {
-                        if (numValue == Entry.Value.ClienteID)
-                        {
-                            DataRow fila = tabla.NewRow();
-                            
-                            fila["ClientId"] = Entry.Value.ClienteID;
-                            fila["Nombre"] = Entry.Value.Nombre;
-                            fila["Apellido"] = Entry.Value.Apellido;
-                            tabla.Rows.Add(fila);
+                    DataRow fila = tabla.NewRow();
 
-                        }
-                    }
+                    fila["ClientId"] = Entry.Value.ClienteID;
+                    fila["Nombre"] = Entry.Value.Nombre;
+                    fila["Apellido"] = Entry.Value.Apellido;
+                    tabla.Rows.Add(fila);
 
                 }
                 else
                 {
-                    if (CC_name_inputfield.Text != "")
+                    if (MiSerializador.control.catalogo_clientes[Entry.Value.ClienteID].Nombre.ToLower().Contains(CC_name_inputfield.Text.ToLower()) & CC_name_inputfield.Text!="")
                     {
-                        if (CC_LastName_inputfield.Text != "")
-                        {
-                            if (CC_LastName_inputfield.Text == Entry.Value.Apellido & CC_name_inputfield.Text == Entry.Value.Nombre)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
-                        }
-                        else
-                        {
-                            if (CC_name_inputfield.Text == Entry.Value.Nombre)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
-                        }
+                        DataRow fila = tabla.NewRow();
 
+                        fila["ClientId"] = Entry.Value.ClienteID;
+                        fila["Nombre"] = Entry.Value.Nombre;
+                        fila["Apellido"] = Entry.Value.Apellido;
+                        tabla.Rows.Add(fila);
                     }
                     else
                     {
-                        if (CC_LastName_inputfield.Text != "")
+                        if (MiSerializador.control.catalogo_clientes[Entry.Value.ClienteID].Apellido.ToLower().Contains(CC_LastName_inputfield.Text.ToLower()) & CC_LastName_inputfield.Text!="")
                         {
-                            if (CC_LastName_inputfield.Text == Entry.Value.Apellido)
-                            {
-                                DataRow fila = tabla.NewRow();
-                                
-                                fila["ClientId"] = Entry.Value.ClienteID;
-                                fila["Nombre"] = Entry.Value.Nombre;
-                                fila["Apellido"] = Entry.Value.Apellido;
-                                tabla.Rows.Add(fila);
-                            }
+                            DataRow fila = tabla.NewRow();
+
+                            fila["ClientId"] = Entry.Value.ClienteID;
+                            fila["Nombre"] = Entry.Value.Nombre;
+                            fila["Apellido"] = Entry.Value.Apellido;
+                            tabla.Rows.Add(fila);
                         }
+
                     }
-                }
+
+                }          
+
             }
         }
         private void Limpiar()

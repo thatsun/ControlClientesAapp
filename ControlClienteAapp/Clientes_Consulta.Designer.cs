@@ -39,6 +39,7 @@
             this.CC_id_inputfield = new System.Windows.Forms.TextBox();
             this.CC_buscar_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.CC_cancelarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CC_MyData_gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // CC_Limpiar_button
             // 
             this.CC_Limpiar_button.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CC_Limpiar_button.Location = new System.Drawing.Point(592, 58);
+            this.CC_Limpiar_button.Location = new System.Drawing.Point(525, 57);
             this.CC_Limpiar_button.Name = "CC_Limpiar_button";
             this.CC_Limpiar_button.Size = new System.Drawing.Size(88, 59);
             this.CC_Limpiar_button.TabIndex = 24;
@@ -126,7 +127,7 @@
             // 
             // CC_buscar_button
             // 
-            this.CC_buscar_button.Location = new System.Drawing.Point(496, 58);
+            this.CC_buscar_button.Location = new System.Drawing.Point(429, 58);
             this.CC_buscar_button.Name = "CC_buscar_button";
             this.CC_buscar_button.Size = new System.Drawing.Size(90, 58);
             this.CC_buscar_button.TabIndex = 29;
@@ -143,11 +144,23 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Criterios de busqueda";
             // 
+            // CC_cancelarbutton
+            // 
+            this.CC_cancelarbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CC_cancelarbutton.Location = new System.Drawing.Point(619, 58);
+            this.CC_cancelarbutton.Name = "CC_cancelarbutton";
+            this.CC_cancelarbutton.Size = new System.Drawing.Size(86, 58);
+            this.CC_cancelarbutton.TabIndex = 31;
+            this.CC_cancelarbutton.Text = "Cancelar";
+            this.CC_cancelarbutton.UseVisualStyleBackColor = true;
+            // 
             // Clientes_Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CC_cancelarbutton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CC_cancelarbutton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CC_buscar_button);
             this.Controls.Add(this.BC_id_label);
@@ -159,7 +172,10 @@
             this.Controls.Add(this.CC_LastName_inputfield);
             this.Controls.Add(this.CC_name_inputfield);
             this.Controls.Add(this.nombre_label);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Clientes_Consultas";
+            this.ShowInTaskbar = false;
             this.Text = "Consultas";
             ((System.ComponentModel.ISupportInitialize)(this.CC_MyData_gridview)).EndInit();
             this.ResumeLayout(false);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.TextBox CC_id_inputfield;
         private System.Windows.Forms.Button CC_buscar_button;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button CC_cancelarbutton;
     }
 }

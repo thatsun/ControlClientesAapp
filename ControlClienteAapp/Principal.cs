@@ -35,11 +35,6 @@ namespace ControlClienteAapp
 
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -72,6 +67,53 @@ namespace ControlClienteAapp
         {
             Clientes_Consultas _clientes_consultas = new Clientes_Consultas();
             _clientes_consultas.ShowDialog();
+        }
+
+        private void m_clientes_cambios_Click(object sender, EventArgs e)
+        {
+            Clientes_Cambios _clientes_cambios = new Clientes_Cambios();
+            _clientes_cambios.ShowDialog();
+        }
+
+        private void m_pedidos_nuevo_Click(object sender, EventArgs e)
+        {
+            Pedidos_nuevo _pedido_nuevo = new Pedidos_nuevo();
+            _pedido_nuevo.ShowDialog();
+        }
+
+        private void m_pedidos_consultar_Click(object sender, EventArgs e)
+        {
+            MiSerializador.control.peddio_modo_consulta = "Consultar";
+            ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
+            _pedido_consulta.ShowDialog();
+        }
+
+        private void Sub_confirmarpedido_Click(object sender, EventArgs e)
+        {
+            MiSerializador.control.peddio_modo_consulta = "Confirmar";
+            ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
+            _pedido_consulta.ShowDialog();
+        }
+
+        private void Sub_pedidoproduccion_Click(object sender, EventArgs e)
+        {
+            MiSerializador.control.peddio_modo_consulta = "Produccion";
+            ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
+            _pedido_consulta.ShowDialog();
+        }
+
+        private void Sub_Cancelarpedido_Click(object sender, EventArgs e)
+        {
+            MiSerializador.control.peddio_modo_consulta = "Cancelar";
+            ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
+            _pedido_consulta.ShowDialog();
+        }
+
+        private void S_Editarpedido_Click(object sender, EventArgs e)
+        {
+            MiSerializador.control.peddio_modo_consulta = "Editar";
+            ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
+            _pedido_consulta.ShowDialog();
         }
     }
 }

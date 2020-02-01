@@ -40,6 +40,7 @@
             this.BC_apellido_label = new System.Windows.Forms.Label();
             this.Resultados = new System.Windows.Forms.Label();
             this.Criterios = new System.Windows.Forms.Label();
+            this.CB_cancelarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BC_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +157,23 @@
             this.Criterios.TabIndex = 14;
             this.Criterios.Text = "Criterios de busqueda";
             // 
+            // CB_cancelarbutton
+            // 
+            this.CB_cancelarbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CB_cancelarbutton.Location = new System.Drawing.Point(605, 62);
+            this.CB_cancelarbutton.Name = "CB_cancelarbutton";
+            this.CB_cancelarbutton.Size = new System.Drawing.Size(104, 70);
+            this.CB_cancelarbutton.TabIndex = 15;
+            this.CB_cancelarbutton.Text = "Cancelar";
+            this.CB_cancelarbutton.UseVisualStyleBackColor = true;
+            // 
             // ClientesBajas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CB_cancelarbutton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CB_cancelarbutton);
             this.Controls.Add(this.Criterios);
             this.Controls.Add(this.Resultados);
             this.Controls.Add(this.BC_apellido_label);
@@ -174,6 +187,7 @@
             this.Controls.Add(this.BC_id_inputfield);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ClientesBajas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -198,5 +212,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Label Resultados;
         private System.Windows.Forms.Label Criterios;
+        private System.Windows.Forms.Button CB_cancelarbutton;
     }
 }

@@ -37,22 +37,30 @@
             this.menu_pedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.m_pedidos_nuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.m_pedidos_consultar = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_pedidos_eliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.m_pedidos_editar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_cuentas = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cuentas_xcliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cuentas_xestado = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_cuentas_abono = new System.Windows.Forms.ToolStripMenuItem();
+            this.S_Editarpedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sub_confirmarpedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sub_pedidoproduccion = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sub_Cancelarpedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_pago = new System.Windows.Forms.ToolStripMenuItem();
+            this.Consultar_Pagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Pago_Anticipo = new System.Windows.Forms.ToolStripMenuItem();
+            this.Abonar_pagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Liquidar_Pagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Productos_Consultas = new System.Windows.Forms.ToolStripMenuItem();
+            this.Productos_Cambios = new System.Windows.Forms.ToolStripMenuItem();
+            this.Productos_Altas = new System.Windows.Forms.ToolStripMenuItem();
+            this.Productos_Bajas = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_resportes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_reportes_clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_reportes_pedidos = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_reporte_cuentas = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_reportes_abonosvigentes = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_reportes_abonos_vencidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_reporte_pagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_reportes_productos = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_aplicacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.A_acercade = new System.Windows.Forms.ToolStripMenuItem();
+            this.A_ayuda = new System.Windows.Forms.ToolStripMenuItem();
+            this.A_salir = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +70,8 @@
             this.main_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_clientes,
             this.menu_pedidos,
-            this.menu_cuentas,
+            this.menu_pago,
+            this.toolStripMenuItem1,
             this.menu_resportes,
             this.menu_aplicacion});
             this.main_menu.Location = new System.Drawing.Point(0, 0);
@@ -90,36 +99,36 @@
             // m_clientes_altas
             // 
             this.m_clientes_altas.Name = "m_clientes_altas";
-            this.m_clientes_altas.Size = new System.Drawing.Size(180, 26);
+            this.m_clientes_altas.Size = new System.Drawing.Size(148, 26);
             this.m_clientes_altas.Text = "Altas";
             this.m_clientes_altas.Click += new System.EventHandler(this.m_clientes_altas_Click);
             // 
             // m_clientes_bajas
             // 
             this.m_clientes_bajas.Name = "m_clientes_bajas";
-            this.m_clientes_bajas.Size = new System.Drawing.Size(180, 26);
+            this.m_clientes_bajas.Size = new System.Drawing.Size(148, 26);
             this.m_clientes_bajas.Text = "Bajas";
             this.m_clientes_bajas.Click += new System.EventHandler(this.m_clientes_bajas_Click);
             // 
             // m_clientes_consultas
             // 
             this.m_clientes_consultas.Name = "m_clientes_consultas";
-            this.m_clientes_consultas.Size = new System.Drawing.Size(180, 26);
+            this.m_clientes_consultas.Size = new System.Drawing.Size(148, 26);
             this.m_clientes_consultas.Text = "Consultas";
             this.m_clientes_consultas.Click += new System.EventHandler(this.m_clientes_consultas_Click);
             // 
             // m_clientes_cambios
             // 
             this.m_clientes_cambios.Name = "m_clientes_cambios";
-            this.m_clientes_cambios.Size = new System.Drawing.Size(180, 26);
+            this.m_clientes_cambios.Size = new System.Drawing.Size(148, 26);
             this.m_clientes_cambios.Text = "Cambios";
+            this.m_clientes_cambios.Click += new System.EventHandler(this.m_clientes_cambios_Click);
             // 
             // menu_pedidos
             // 
             this.menu_pedidos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_pedidos_nuevo,
             this.m_pedidos_consultar,
-            this.m_pedidos_eliminar,
             this.m_pedidos_editar});
             this.menu_pedidos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menu_pedidos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -130,136 +139,201 @@
             // m_pedidos_nuevo
             // 
             this.m_pedidos_nuevo.Name = "m_pedidos_nuevo";
-            this.m_pedidos_nuevo.Size = new System.Drawing.Size(180, 26);
+            this.m_pedidos_nuevo.Size = new System.Drawing.Size(147, 26);
             this.m_pedidos_nuevo.Text = "Nuevo";
+            this.m_pedidos_nuevo.Click += new System.EventHandler(this.m_pedidos_nuevo_Click);
             // 
             // m_pedidos_consultar
             // 
             this.m_pedidos_consultar.Name = "m_pedidos_consultar";
-            this.m_pedidos_consultar.Size = new System.Drawing.Size(180, 26);
+            this.m_pedidos_consultar.Size = new System.Drawing.Size(147, 26);
             this.m_pedidos_consultar.Text = "Consultar";
-            // 
-            // m_pedidos_eliminar
-            // 
-            this.m_pedidos_eliminar.Name = "m_pedidos_eliminar";
-            this.m_pedidos_eliminar.Size = new System.Drawing.Size(180, 26);
-            this.m_pedidos_eliminar.Text = "Eliminar";
+            this.m_pedidos_consultar.Click += new System.EventHandler(this.m_pedidos_consultar_Click);
             // 
             // m_pedidos_editar
             // 
+            this.m_pedidos_editar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.S_Editarpedido,
+            this.Sub_confirmarpedido,
+            this.Sub_pedidoproduccion,
+            this.Sub_Cancelarpedido});
             this.m_pedidos_editar.Name = "m_pedidos_editar";
-            this.m_pedidos_editar.Size = new System.Drawing.Size(180, 26);
-            this.m_pedidos_editar.Text = "Editar";
+            this.m_pedidos_editar.Size = new System.Drawing.Size(147, 26);
+            this.m_pedidos_editar.Text = "Acciones";
             // 
-            // menu_cuentas
+            // S_Editarpedido
             // 
-            this.menu_cuentas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_cuentas_xcliente,
-            this.m_cuentas_xestado,
-            this.m_cuentas_abono});
-            this.menu_cuentas.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.menu_cuentas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menu_cuentas.Name = "menu_cuentas";
-            this.menu_cuentas.Size = new System.Drawing.Size(78, 25);
-            this.menu_cuentas.Text = "Cuentas";
+            this.S_Editarpedido.Name = "S_Editarpedido";
+            this.S_Editarpedido.Size = new System.Drawing.Size(217, 26);
+            this.S_Editarpedido.Text = "Editar Pedido";
+            this.S_Editarpedido.Click += new System.EventHandler(this.S_Editarpedido_Click);
             // 
-            // m_cuentas_xcliente
+            // Sub_confirmarpedido
             // 
-            this.m_cuentas_xcliente.Name = "m_cuentas_xcliente";
-            this.m_cuentas_xcliente.Size = new System.Drawing.Size(225, 26);
-            this.m_cuentas_xcliente.Text = "Consultar por cliente";
+            this.Sub_confirmarpedido.Name = "Sub_confirmarpedido";
+            this.Sub_confirmarpedido.Size = new System.Drawing.Size(217, 26);
+            this.Sub_confirmarpedido.Text = "Confirmar Pedido";
+            this.Sub_confirmarpedido.Click += new System.EventHandler(this.Sub_confirmarpedido_Click);
             // 
-            // m_cuentas_xestado
+            // Sub_pedidoproduccion
             // 
-            this.m_cuentas_xestado.Name = "m_cuentas_xestado";
-            this.m_cuentas_xestado.Size = new System.Drawing.Size(225, 26);
-            this.m_cuentas_xestado.Text = "Consultar por estado";
+            this.Sub_pedidoproduccion.Name = "Sub_pedidoproduccion";
+            this.Sub_pedidoproduccion.Size = new System.Drawing.Size(217, 26);
+            this.Sub_pedidoproduccion.Text = "Enviar a Produccion";
+            this.Sub_pedidoproduccion.Click += new System.EventHandler(this.Sub_pedidoproduccion_Click);
             // 
-            // m_cuentas_abono
+            // Sub_Cancelarpedido
             // 
-            this.m_cuentas_abono.Name = "m_cuentas_abono";
-            this.m_cuentas_abono.Size = new System.Drawing.Size(225, 26);
-            this.m_cuentas_abono.Text = "Abono";
+            this.Sub_Cancelarpedido.Name = "Sub_Cancelarpedido";
+            this.Sub_Cancelarpedido.Size = new System.Drawing.Size(217, 26);
+            this.Sub_Cancelarpedido.Text = "Cancelar Pedido";
+            this.Sub_Cancelarpedido.Click += new System.EventHandler(this.Sub_Cancelarpedido_Click);
+            // 
+            // menu_pago
+            // 
+            this.menu_pago.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Consultar_Pagos,
+            this.Pago_Anticipo,
+            this.Abonar_pagos,
+            this.Liquidar_Pagos});
+            this.menu_pago.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menu_pago.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menu_pago.Name = "menu_pago";
+            this.menu_pago.Size = new System.Drawing.Size(64, 25);
+            this.menu_pago.Text = "Pagos";
+            // 
+            // Consultar_Pagos
+            // 
+            this.Consultar_Pagos.Name = "Consultar_Pagos";
+            this.Consultar_Pagos.Size = new System.Drawing.Size(147, 26);
+            this.Consultar_Pagos.Text = "Consultar";
+            // 
+            // Pago_Anticipo
+            // 
+            this.Pago_Anticipo.Name = "Pago_Anticipo";
+            this.Pago_Anticipo.Size = new System.Drawing.Size(147, 26);
+            this.Pago_Anticipo.Text = "Anticipo";
+            // 
+            // Abonar_pagos
+            // 
+            this.Abonar_pagos.Name = "Abonar_pagos";
+            this.Abonar_pagos.Size = new System.Drawing.Size(147, 26);
+            this.Abonar_pagos.Text = "Abonar";
+            // 
+            // Liquidar_Pagos
+            // 
+            this.Liquidar_Pagos.Name = "Liquidar_Pagos";
+            this.Liquidar_Pagos.Size = new System.Drawing.Size(147, 26);
+            this.Liquidar_Pagos.Text = "Liquidar";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Productos_Consultas,
+            this.Productos_Cambios,
+            this.Productos_Altas,
+            this.Productos_Bajas});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(92, 25);
+            this.toolStripMenuItem1.Text = "Productos";
+            // 
+            // Productos_Consultas
+            // 
+            this.Productos_Consultas.Name = "Productos_Consultas";
+            this.Productos_Consultas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Consultas.Text = "Consultas";
+            // 
+            // Productos_Cambios
+            // 
+            this.Productos_Cambios.Name = "Productos_Cambios";
+            this.Productos_Cambios.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Cambios.Text = "Cambios";
+            // 
+            // Productos_Altas
+            // 
+            this.Productos_Altas.Name = "Productos_Altas";
+            this.Productos_Altas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Altas.Text = "Altas";
+            // 
+            // Productos_Bajas
+            // 
+            this.Productos_Bajas.Name = "Productos_Bajas";
+            this.Productos_Bajas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Bajas.Text = "Bajas";
             // 
             // menu_resportes
             // 
             this.menu_resportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_reportes_clientes,
             this.m_reportes_pedidos,
-            this.m_reporte_cuentas,
-            this.m_reportes_abonosvigentes,
-            this.m_reportes_abonos_vencidos});
+            this.m_reporte_pagos,
+            this.m_reportes_productos});
             this.menu_resportes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menu_resportes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menu_resportes.Name = "menu_resportes";
             this.menu_resportes.Size = new System.Drawing.Size(84, 25);
             this.menu_resportes.Text = "Reportes";
-            this.menu_resportes.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // m_reportes_clientes
             // 
             this.m_reportes_clientes.Name = "m_reportes_clientes";
-            this.m_reportes_clientes.Size = new System.Drawing.Size(198, 26);
+            this.m_reportes_clientes.Size = new System.Drawing.Size(150, 26);
             this.m_reportes_clientes.Text = "Clientes";
             this.m_reportes_clientes.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // m_reportes_pedidos
             // 
             this.m_reportes_pedidos.Name = "m_reportes_pedidos";
-            this.m_reportes_pedidos.Size = new System.Drawing.Size(198, 26);
+            this.m_reportes_pedidos.Size = new System.Drawing.Size(150, 26);
             this.m_reportes_pedidos.Text = "Pedidos";
             this.m_reportes_pedidos.Click += new System.EventHandler(this.m_reportes_pedidos_Click);
             // 
-            // m_reporte_cuentas
+            // m_reporte_pagos
             // 
-            this.m_reporte_cuentas.Name = "m_reporte_cuentas";
-            this.m_reporte_cuentas.Size = new System.Drawing.Size(198, 26);
-            this.m_reporte_cuentas.Text = "Cuentas";
+            this.m_reporte_pagos.Name = "m_reporte_pagos";
+            this.m_reporte_pagos.Size = new System.Drawing.Size(150, 26);
+            this.m_reporte_pagos.Text = "Pagos";
             // 
-            // m_reportes_abonosvigentes
+            // m_reportes_productos
             // 
-            this.m_reportes_abonosvigentes.Name = "m_reportes_abonosvigentes";
-            this.m_reportes_abonosvigentes.Size = new System.Drawing.Size(198, 26);
-            this.m_reportes_abonosvigentes.Text = "Abonos vigentes";
-            // 
-            // m_reportes_abonos_vencidos
-            // 
-            this.m_reportes_abonos_vencidos.Name = "m_reportes_abonos_vencidos";
-            this.m_reportes_abonos_vencidos.Size = new System.Drawing.Size(198, 26);
-            this.m_reportes_abonos_vencidos.Text = "Abonos vencidos";
+            this.m_reportes_productos.Name = "m_reportes_productos";
+            this.m_reportes_productos.Size = new System.Drawing.Size(150, 26);
+            this.m_reportes_productos.Text = "Productos";
             // 
             // menu_aplicacion
             // 
             this.menu_aplicacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acercaDeToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.A_acercade,
+            this.A_ayuda,
+            this.A_salir});
             this.menu_aplicacion.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menu_aplicacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menu_aplicacion.Name = "menu_aplicacion";
             this.menu_aplicacion.Size = new System.Drawing.Size(93, 25);
             this.menu_aplicacion.Text = "Aplicacion";
             // 
-            // acercaDeToolStripMenuItem
+            // A_acercade
             // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de..";
+            this.A_acercade.Name = "A_acercade";
+            this.A_acercade.Size = new System.Drawing.Size(153, 26);
+            this.A_acercade.Text = "Acerca de..";
             // 
-            // ayudaToolStripMenuItem
+            // A_ayuda
             // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.A_ayuda.Name = "A_ayuda";
+            this.A_ayuda.Size = new System.Drawing.Size(153, 26);
+            this.A_ayuda.Text = "Ayuda";
             // 
-            // salirToolStripMenuItem
+            // A_salir
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.A_salir.Name = "A_salir";
+            this.A_salir.Size = new System.Drawing.Size(153, 26);
+            this.A_salir.Text = "Salir";
+            this.A_salir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // Form1
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,9 +342,10 @@
             this.Controls.Add(this.main_menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.main_menu;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.Text = "Control de Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -291,22 +366,30 @@
         private System.Windows.Forms.ToolStripMenuItem menu_pedidos;
         private System.Windows.Forms.ToolStripMenuItem m_pedidos_nuevo;
         private System.Windows.Forms.ToolStripMenuItem m_pedidos_consultar;
-        private System.Windows.Forms.ToolStripMenuItem m_pedidos_eliminar;
         private System.Windows.Forms.ToolStripMenuItem m_pedidos_editar;
-        private System.Windows.Forms.ToolStripMenuItem menu_cuentas;
-        private System.Windows.Forms.ToolStripMenuItem m_cuentas_xcliente;
-        private System.Windows.Forms.ToolStripMenuItem m_cuentas_xestado;
-        private System.Windows.Forms.ToolStripMenuItem m_cuentas_abono;
+        private System.Windows.Forms.ToolStripMenuItem menu_pago;
+        private System.Windows.Forms.ToolStripMenuItem Consultar_Pagos;
+        private System.Windows.Forms.ToolStripMenuItem Abonar_pagos;
         private System.Windows.Forms.ToolStripMenuItem menu_resportes;
         private System.Windows.Forms.ToolStripMenuItem m_reportes_clientes;
         private System.Windows.Forms.ToolStripMenuItem m_reportes_pedidos;
-        private System.Windows.Forms.ToolStripMenuItem m_reporte_cuentas;
+        private System.Windows.Forms.ToolStripMenuItem m_reporte_pagos;
         private System.Windows.Forms.ToolStripMenuItem menu_aplicacion;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem m_reportes_abonosvigentes;
-        private System.Windows.Forms.ToolStripMenuItem m_reportes_abonos_vencidos;
+        private System.Windows.Forms.ToolStripMenuItem A_acercade;
+        private System.Windows.Forms.ToolStripMenuItem A_ayuda;
+        private System.Windows.Forms.ToolStripMenuItem A_salir;
+        private System.Windows.Forms.ToolStripMenuItem m_reportes_productos;
+        private System.Windows.Forms.ToolStripMenuItem Sub_confirmarpedido;
+        private System.Windows.Forms.ToolStripMenuItem Sub_pedidoproduccion;
+        private System.Windows.Forms.ToolStripMenuItem Sub_Cancelarpedido;
+        private System.Windows.Forms.ToolStripMenuItem Liquidar_Pagos;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem Productos_Consultas;
+        private System.Windows.Forms.ToolStripMenuItem Productos_Cambios;
+        private System.Windows.Forms.ToolStripMenuItem Productos_Altas;
+        private System.Windows.Forms.ToolStripMenuItem Productos_Bajas;
+        private System.Windows.Forms.ToolStripMenuItem S_Editarpedido;
+        private System.Windows.Forms.ToolStripMenuItem Pago_Anticipo;
     }
 }
 

@@ -48,13 +48,13 @@ namespace ControlClienteAapp
 
             };
             MiSerializador.control.id_autoincrementado++;
-            _clienteData.ClienteID = MiSerializador.control.id_autoincrementado;
+            _clienteData.ClienteID = MiSerializador.control.id_autoincrementado.ToString();
             MiSerializador.control.catalogo_clientes.Add(_clienteData.ClienteID, _clienteData);
             MiSerializador.control.SaveAppdata();
         }
         private void ConsultarClientes()
         {
-            foreach (KeyValuePair<int, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
+            foreach (KeyValuePair<string, ClienteData> Entry in MiSerializador.control.catalogo_clientes)
             {
                 DataRow fila = tabla.NewRow();
                 fila["ClientId"] = Entry.Value.ClienteID;

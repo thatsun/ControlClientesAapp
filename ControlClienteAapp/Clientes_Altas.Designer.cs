@@ -37,6 +37,7 @@
             this.Guardar_button = new System.Windows.Forms.Button();
             this.nombre_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CA_cancelbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MyData_gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             this.MyData_gridview.Name = "MyData_gridview";
             this.MyData_gridview.ReadOnly = true;
             this.MyData_gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MyData_gridview.Size = new System.Drawing.Size(556, 212);
+            this.MyData_gridview.Size = new System.Drawing.Size(654, 212);
             this.MyData_gridview.TabIndex = 14;
             this.MyData_gridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MyData_gridview_CellContentClick);
             // 
@@ -130,11 +131,23 @@
             this.label1.Text = "Registros";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // CA_cancelbutton
+            // 
+            this.CA_cancelbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CA_cancelbutton.Location = new System.Drawing.Point(604, 51);
+            this.CA_cancelbutton.Name = "CA_cancelbutton";
+            this.CA_cancelbutton.Size = new System.Drawing.Size(92, 59);
+            this.CA_cancelbutton.TabIndex = 18;
+            this.CA_cancelbutton.Text = "Cancelar";
+            this.CA_cancelbutton.UseVisualStyleBackColor = true;
+            // 
             // cliente_altas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CA_cancelbutton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CA_cancelbutton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Consultar_button);
             this.Controls.Add(this.Limpiar_button);
@@ -145,6 +158,8 @@
             this.Controls.Add(this.Guardar_button);
             this.Controls.Add(this.nombre_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cliente_altas";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -166,5 +181,6 @@
         private System.Windows.Forms.Button Guardar_button;
         private System.Windows.Forms.Label nombre_label;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CA_cancelbutton;
     }
 }
