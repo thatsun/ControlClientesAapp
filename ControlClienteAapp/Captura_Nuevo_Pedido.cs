@@ -270,6 +270,7 @@ namespace ControlClienteAapp
                             AbonoData _abono = new AbonoData();
 
                             _abono.PedidoID = MiSerializador.control.id_pedidoseleccionado;
+                            _abono.AbonoID = i.ToString();
                             if (i == 1)
                             {
                                 _abono.Importe = C_abono_inicial;
@@ -319,6 +320,7 @@ namespace ControlClienteAapp
                             AbonoData _abono = new AbonoData();
 
                             _abono.PedidoID = _new_pedido.PedidoID;
+                            _abono.AbonoID = i.ToString();
                             if (i == 1)
                             {
                                 _abono.Importe = C_abono_inicial;

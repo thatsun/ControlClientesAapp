@@ -139,14 +139,14 @@
             // m_pedidos_nuevo
             // 
             this.m_pedidos_nuevo.Name = "m_pedidos_nuevo";
-            this.m_pedidos_nuevo.Size = new System.Drawing.Size(147, 26);
+            this.m_pedidos_nuevo.Size = new System.Drawing.Size(180, 26);
             this.m_pedidos_nuevo.Text = "Nuevo";
             this.m_pedidos_nuevo.Click += new System.EventHandler(this.m_pedidos_nuevo_Click);
             // 
             // m_pedidos_consultar
             // 
             this.m_pedidos_consultar.Name = "m_pedidos_consultar";
-            this.m_pedidos_consultar.Size = new System.Drawing.Size(147, 26);
+            this.m_pedidos_consultar.Size = new System.Drawing.Size(180, 26);
             this.m_pedidos_consultar.Text = "Consultar";
             this.m_pedidos_consultar.Click += new System.EventHandler(this.m_pedidos_consultar_Click);
             // 
@@ -158,7 +158,7 @@
             this.Sub_pedidoproduccion,
             this.Sub_Cancelarpedido});
             this.m_pedidos_editar.Name = "m_pedidos_editar";
-            this.m_pedidos_editar.Size = new System.Drawing.Size(147, 26);
+            this.m_pedidos_editar.Size = new System.Drawing.Size(180, 26);
             this.m_pedidos_editar.Text = "Acciones";
             // 
             // S_Editarpedido
@@ -205,25 +205,26 @@
             // Consultar_Pagos
             // 
             this.Consultar_Pagos.Name = "Consultar_Pagos";
-            this.Consultar_Pagos.Size = new System.Drawing.Size(147, 26);
+            this.Consultar_Pagos.Size = new System.Drawing.Size(180, 26);
             this.Consultar_Pagos.Text = "Consultar";
+            this.Consultar_Pagos.Click += new System.EventHandler(this.Consultar_Pagos_Click);
             // 
             // Pago_Anticipo
             // 
             this.Pago_Anticipo.Name = "Pago_Anticipo";
-            this.Pago_Anticipo.Size = new System.Drawing.Size(147, 26);
+            this.Pago_Anticipo.Size = new System.Drawing.Size(180, 26);
             this.Pago_Anticipo.Text = "Anticipo";
             // 
             // Abonar_pagos
             // 
             this.Abonar_pagos.Name = "Abonar_pagos";
-            this.Abonar_pagos.Size = new System.Drawing.Size(147, 26);
+            this.Abonar_pagos.Size = new System.Drawing.Size(180, 26);
             this.Abonar_pagos.Text = "Abonar";
             // 
             // Liquidar_Pagos
             // 
             this.Liquidar_Pagos.Name = "Liquidar_Pagos";
-            this.Liquidar_Pagos.Size = new System.Drawing.Size(147, 26);
+            this.Liquidar_Pagos.Size = new System.Drawing.Size(180, 26);
             this.Liquidar_Pagos.Text = "Liquidar";
             // 
             // toolStripMenuItem1
@@ -242,25 +243,25 @@
             // Productos_Consultas
             // 
             this.Productos_Consultas.Name = "Productos_Consultas";
-            this.Productos_Consultas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Consultas.Size = new System.Drawing.Size(180, 26);
             this.Productos_Consultas.Text = "Consultas";
             // 
             // Productos_Cambios
             // 
             this.Productos_Cambios.Name = "Productos_Cambios";
-            this.Productos_Cambios.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Cambios.Size = new System.Drawing.Size(180, 26);
             this.Productos_Cambios.Text = "Cambios";
             // 
             // Productos_Altas
             // 
             this.Productos_Altas.Name = "Productos_Altas";
-            this.Productos_Altas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Altas.Size = new System.Drawing.Size(180, 26);
             this.Productos_Altas.Text = "Altas";
             // 
             // Productos_Bajas
             // 
             this.Productos_Bajas.Name = "Productos_Bajas";
-            this.Productos_Bajas.Size = new System.Drawing.Size(148, 26);
+            this.Productos_Bajas.Size = new System.Drawing.Size(180, 26);
             this.Productos_Bajas.Text = "Bajas";
             // 
             // menu_resportes

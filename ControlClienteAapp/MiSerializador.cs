@@ -24,7 +24,7 @@ namespace ControlClienteAapp
         public int id_autoincrementado = 0;
         public int id_pedido_autoincremmentado = 0;
 
-        public string fylename = "appdata01version18";
+        public string fylename = "appdata01version20";
         public Dictionary<string, ClienteData> catalogo_clientes = new Dictionary<string, ClienteData>();
 
         public Dictionary<string, ProductoData> catalogo_productos = new Dictionary<string, ProductoData>();
@@ -166,7 +166,7 @@ namespace ControlClienteAapp
         public string ClienteID { get; set; }
         public int[] Fecha_de_pago;
         public int[] Inicio_vigencia;        
-        public string Estado { get; set; }///vencido, pagado, pendiente
+        public string Estado { get; set; }///vencido, pagado, pendiente//vigente
         public decimal Importe { get; set; }
 
 

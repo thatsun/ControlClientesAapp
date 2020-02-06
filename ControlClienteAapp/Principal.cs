@@ -115,5 +115,11 @@ namespace ControlClienteAapp
             ConsultarPedidos _pedido_consulta = new ConsultarPedidos();
             _pedido_consulta.ShowDialog();
         }
+
+        private void Consultar_Pagos_Click(object sender, EventArgs e)
+        {
+            ConsultarPagos _pagos_consulta = new ConsultarPagos();
+            _pagos_consulta.ShowDialog();
+        }
     }
 }
