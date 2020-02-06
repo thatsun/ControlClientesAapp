@@ -188,6 +188,7 @@ namespace ControlClienteAapp
         public ProductoData(string _id, string _name, string _description, decimal _precio)
         {
             id_product = _id;
+
             name_product = _name;
             desc_product = _description;
             precio = _precio;
