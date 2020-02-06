@@ -189,7 +189,7 @@ namespace ControlClienteAapp
         {
             id_product = _id;
 
-            name_product = _name;
+            name_product = _name; 
             desc_product = _description;
             precio = _precio;
         }
