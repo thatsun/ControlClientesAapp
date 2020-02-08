@@ -50,6 +50,7 @@ namespace ControlClienteAapp
         {
             ProductoData _pdata = new ProductoData(_id,_name,_description,_precio);
             catalogo_productos.Add(_id, _pdata);
+            //create default product
 
         }
         public void LoadAppData()
